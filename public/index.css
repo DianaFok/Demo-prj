@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+}
+
+.nav {
+  height: 5rem;
+  width: 90%;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+a {
+  font-size: 2rem;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+p {
+  border: 1px solid black;
+  height: 40rem;
+  width: 20%;
+  margin: 2rem;
+  float: left;
+}

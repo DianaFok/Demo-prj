@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="status.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <a href="/personal" class="btn btn-default btn-sm">Favorites</a>
+    <div class="page-header text-center">
+      <h1>Application Status</h1>
+    </div>
+    <div class="col-sm-5">
+
+      <h2>Pet List</h2>
+      <tbody>
+        <table>
+
+          <% for(var i=0; i<messages.length; i++) {%>
+          <tr class="message">
+            <th class="side"><%=messages[i].name%>
+
+            <% if(messages[i].heart === true){ %>
+        <style="color:red"><i class="fas fa-heart"></i>
+          <% } else { %>
+
+        <% } %>
+            <% if(user.local.email == messages[i].name) { %>
+       </th>
+       <% } %>
+
+          </tr>
+          <% } %>
+        </table>
+      </tbody>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/077191d827.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+  <div class="container">
+    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    <a href="/personal" class="btn btn-default btn-sm">Favorites</a>
+    <a href="/status" class="btn btn-default btn-sm">Application Status</a>
+    <div class="page-header text-center">
+      <h1>Profile Page</h1>
+    </div>
+    <div class="col-sm-5">
+      <h2>Find a pet</h2>
+      <form action="/messages" method="POST">
+        <input style="display: none" type="text" value="<%= user.local.email%>" name="name">
+        <input type="text" placeholder="breed" name="msg">
+        <input type="text" placeholder="age" name="date">
+        <input type="text" placeholder="sex" name="date">
+        <input type="text" placeholder="location" name="date">
+        <button type="submit">Submit</button>
+      </form>
+      <h2>Pet List</h2>
+      <tbody>
+        <table>
+
+          <% for(var i=0; i<messages.length; i++) {%>
+          <tr class="message">
+            <th class="side"><%=messages[i].name%>
+
+            <% if(messages[i].heart === true){ %>
+        <style="color:red"><i class="fas fa-heart"></i>
+          <% } else { %>
+        <i class="fas fa-heart"></i>
+        <% } %>
+            <% if(user.local.email == messages[i].name) { %>
+       <i class="fa fa-trash" aria-hidden="true"></i></th>
+       <% } %>
+
+          </tr>
+          <% } %>
+        </table>
+      </tbody>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
